@@ -1075,7 +1075,7 @@ namespace ThermoRawFileParser.Writer
 
                         if (channelName.IsNullOrEmpty())
                         {
-                            channelName = "Channel " + channel;
+                            channelName = "Channel " + Guid.NewGuid();
                         }
 
                         var settings = new ChromatogramTraceSettings(TraceType.StartAnalogChromatogramTraces + channel +
