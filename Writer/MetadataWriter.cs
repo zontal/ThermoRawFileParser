@@ -225,8 +225,11 @@ namespace ThermoRawFileParser.Writer
                     firstScanNumber + ":" + lastScanNumber));
                 metadata.addScanSetting(new CVTerm("PRIDE:0000484", "PRIDE", "Retention time range",
                     startTime + ":" + endTime));
+                metadata.addScanSetting(new CVTerm("", "", "End time", endTime));
                 metadata.addScanSetting(new CVTerm("PRIDE:0000485", "PRIDE", "Mz range",
                     rawFile.RunHeaderEx.LowMass + ":" + rawFile.RunHeaderEx.HighMass));
+                metadata.addScanSetting(new CVTerm("", "", "Low mass", runHeaderEx.LowMass));
+                metadata.addScanSetting(new CVTerm("", "", "High mass", runHeaderEx.HighMass));
                 metadata.addScanSetting(fragmentationTypes);
             }
 
