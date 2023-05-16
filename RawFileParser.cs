@@ -141,6 +141,7 @@ namespace ThermoRawFileParser
                 if (rawFile.GetInstrumentCountOfType(Device.MS) != 0)
                 {
                     rawFile.SelectInstrument(Device.MS, 1);
+
                     rawFile.IncludeReferenceAndExceptionData = !parseInput.ExData;
 
                     // Get the first and last scan from the RAW file
@@ -153,7 +154,7 @@ namespace ThermoRawFileParser
                         throw new RawFileParserException("Empty RAW file, no output will be produced");
                     }
                 }
-
+                
                 if (parseInput.MetadataFormat != MetadataFormat.NONE)
                 {
                     MetadataWriter metadataWriter = new MetadataWriter(parseInput);
