@@ -215,6 +215,8 @@ namespace ThermoRawFileParser.Writer
                 var runHeaderEx = rawFile.RunHeaderEx;
                 var startTime = runHeaderEx.StartTime;
                 var endTime = runHeaderEx.EndTime;
+                metadata.addScanSetting(new CVTerm("", "", "expected runtime",
+                    runHeader.ExpectedRuntime.ToString()));
                 metadata.addScanSetting(new CVTerm("MS:1000016", "MS", "scan start time",
                     startTime.ToString(CultureInfo.InvariantCulture)));
                 metadata.addScanSetting(new CVTerm("MS:1000011", "MS", "mass resolution",
